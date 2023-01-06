@@ -3,7 +3,7 @@
 pipeline {
     agent {
         docker {
-            image 'ultralytics/yolov5:latest '
+            image 'ultralytics/yolov5:latest'
         }
     }
     // environment {
