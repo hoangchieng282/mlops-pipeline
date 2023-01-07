@@ -42,17 +42,14 @@ pipeline {
             steps {
                 sh '''
                     pip install -qr requirement.txt
+                    ls
                 '''
                 // script {
                 //     // (default) parameters in order: branch, stageName, stageResult = false, SKIP_TEST = false, SKIP_DOCKER_PUSH_CH = true, SKIP_DOCKER_PUSH_VN = false, propagate = true
                 //     STAGE_RESULT_SUITE_BUILD_DEVELOP = suiteBuild("ipension-suite-build-multibranch/develop", "${STAGE_NAME}")
                 // }
             }
-            steps {
-                sh '''
-                    ls
-                '''
-            }
+
         }
 
 
