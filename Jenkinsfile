@@ -4,8 +4,8 @@ pipeline {
     agent {
         docker {
             // image 'ultralytics/yolov5:latest'
-            image 'python:3'
-            // args '--ipc=host'
+            image 'hoangchieng282/mlops_image:v1'
+            args '--ipc=host'
         }
     }
     // environment {
@@ -29,6 +29,7 @@ pipeline {
             steps {
                 sh '''
                     python --version
+                    python runs.py
                 '''
                     // python runs.py
                 
@@ -41,8 +42,7 @@ pipeline {
         stage('2nd') {
             steps {
                 sh '''
-                    pip install -qr requirements.txt
-                    ls
+                    python train.py --img 20 --batch 1 --epochs 1 --data nuti-competitor-products-5/data.yaml --weights yolov5l.pt
                 '''
                 // script {
                 //     // (default) parameters in order: branch, stageName, stageResult = false, SKIP_TEST = false, SKIP_DOCKER_PUSH_CH = true, SKIP_DOCKER_PUSH_VN = false, propagate = true
