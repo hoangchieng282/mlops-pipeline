@@ -1,0 +1,5 @@
+names:
+- milk-can
+nc: 1
+train: nuti-competitor-products-5/train/images
+val: nuti-competitor-products-5/valid/images
