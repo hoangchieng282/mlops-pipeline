@@ -41,7 +41,7 @@ pipeline {
         stage('2nd') {
             steps {
                 sh '''
-                    
+                    pip install -qr requirements.txt
                     ls
                 '''
                 // script {
