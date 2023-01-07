@@ -4,7 +4,7 @@ pipeline {
     agent {
         docker {
             // image 'ultralytics/yolov5:latest'
-            image 'hoangchieng282/mlops_image:v1'
+            image 'hoangchieng282/mlops_image:v2'
             args '--ipc=host'
         }
     }
