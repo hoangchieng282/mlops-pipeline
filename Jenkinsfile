@@ -26,7 +26,7 @@ pipeline {
         stage('Starter') {
             steps {
                 sh '''
-                    echo Hi
+                    ls
                 '''
                 // script {
                 //     // (default) parameters in order: branch, stageName, stageResult = false, SKIP_TEST = false, SKIP_DOCKER_PUSH_CH = true, SKIP_DOCKER_PUSH_VN = false, propagate = true
