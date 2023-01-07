@@ -3,8 +3,9 @@
 pipeline {
     agent {
         docker {
-            image 'ultralytics/yolov5:latest'
-            args '--ipc=host'
+            // image 'ultralytics/yolov5:latest'
+            image 'maven:3.8.7-eclipse-temurin-11'
+            // args '--ipc=host'
         }
     }
     // environment {
@@ -27,8 +28,10 @@ pipeline {
         stage('Starter') {
             steps {
                 sh '''
-                    python runs.py
-                '''
+                    mvn --version
+                ...
+                    // python runs.py
+                
                 // script {
                 //     // (default) parameters in order: branch, stageName, stageResult = false, SKIP_TEST = false, SKIP_DOCKER_PUSH_CH = true, SKIP_DOCKER_PUSH_VN = false, propagate = true
                 //     STAGE_RESULT_SUITE_BUILD_DEVELOP = suiteBuild("ipension-suite-build-multibranch/develop", "${STAGE_NAME}")
