@@ -4,6 +4,7 @@ pipeline {
     agent {
         docker {
             image 'ultralytics/yolov5:latest'
+            args '--ipc=host'
         }
     }
     // environment {
@@ -24,6 +25,17 @@ pipeline {
         // }
         
         stage('Starter') {
+            steps {
+                sh '''
+                    python runs.py
+                '''
+                // script {
+                //     // (default) parameters in order: branch, stageName, stageResult = false, SKIP_TEST = false, SKIP_DOCKER_PUSH_CH = true, SKIP_DOCKER_PUSH_VN = false, propagate = true
+                //     STAGE_RESULT_SUITE_BUILD_DEVELOP = suiteBuild("ipension-suite-build-multibranch/develop", "${STAGE_NAME}")
+                // }
+            }
+        }
+        stage('2nd') {
             steps {
                 sh '''
                     ls
