@@ -3,9 +3,9 @@
 pipeline {
     agent {
         docker {
-            image 'test1:v1'
-            // image 'hoangchieng282/mlops_image:v2'
-            // args '--ipc=host'
+            // image 'test1:v1'
+            image 'hoangchieng282/mlops_image:v2'
+            args '--ipc=host'
         }
     }
     // environment {
@@ -28,8 +28,8 @@ pipeline {
         stage('Starter') {
             steps {
                 sh '''
-                    python3 --version
-                    python3 runs.py
+                    python --version
+                    python runs.py
                 '''
                     // python runs.py
                 
