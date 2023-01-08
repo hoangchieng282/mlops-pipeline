@@ -28,8 +28,8 @@ pipeline {
         stage('Starter') {
             steps {
                 sh '''
-                    python --version
-                    python runs.py
+                    python3 --version
+                    python3 runs.py
                 '''
                     // python runs.py
                 
